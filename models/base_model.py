@@ -9,7 +9,7 @@ class BaseModel:
 
         
     def save_to_json(self, filename='database.json'):
-        data = []
+        data = {"students": [], "teachers": []}
     # Reading existing data
         with open(filename, 'r') as f:
             try:
@@ -17,9 +17,11 @@ class BaseModel:
             except Exception as e:
                 print(f'Error reading file: {e}')
 
-        # Append current object
-        data.append(self.to_dict())
+        # Accessing the class, storing in a variable and checking if the stored class is in data before appending
+        object_type = self.__class__.__name__.lower() + "s"  # 'students' or 'teachers'
 
+        if object_type in data:
+            data[object_type].append(self.to_dict())
         # Save updated list back to file
         with open(filename, 'w') as f:
             json.dump(data, f, indent=4)
