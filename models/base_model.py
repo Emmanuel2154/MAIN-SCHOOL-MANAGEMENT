@@ -18,7 +18,7 @@ class BaseModel:
                 print(f'Error reading file: {e}')
 
         # Accessing the class, storing in a variable and checking if the stored class is in data before appending
-        object_type = self.__class__.__name__.lower() + "s"  # 'students' or 'teachers'
+        object_type = self.__class__.__name__.lower()
 
         if object_type in data:
             data[object_type].append(self.to_dict())
