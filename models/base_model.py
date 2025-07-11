@@ -9,7 +9,7 @@ class BaseModel:
 
         
     def save_to_json(self, filename='database.json'):
-        data = {"students": [], "teachers": []}
+        data = {"student": [], "teacher": []}
     # Reading existing data
         with open(filename, 'r') as f:
             try:
