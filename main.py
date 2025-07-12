@@ -6,6 +6,9 @@ def main():
     student = create_new_student(student_obj)
     student.save_to_json()
 
+    student.update_obj()
+
+
     teacher = create_new_teacher(teacher_obj)
     teacher.save_to_json()
 

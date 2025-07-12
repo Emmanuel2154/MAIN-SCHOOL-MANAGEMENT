@@ -1,6 +1,8 @@
 import json
+import random
 class BaseModel:            
     def __init__(self, *args, **kwargs) -> None:
+        self.id = kwargs.get("id", f"{self.__class__.__name__[0].lower()}{random.randint(100, 900)}")
         for key, value in kwargs.items():
             setattr(self, key, value)
 
@@ -27,17 +29,22 @@ class BaseModel:
             json.dump(data, f, indent=4)
         print(f"Saved to {filename}")
 
-
-
-
-
-
     
-    # @classmethod
-    # def from_json(cls, filename= 'database.json'):
-    #     try:
-    #         with open(filename, 'r') as json_file:
-    #             data = json.load(json_file)
-    #         return cls(**data)
-    #     except Exception as e:
-    #         print(f"Error reading file: {e}")
+    # function to update an object
+    def update_obj(self, filename='database.json'):
+        with open(filename, 'r') as f:
+            try:
+                data = json.load(f)
+            except Exception as e:
+                print(f"Error reading file: {e}")
+        object_types = self.__class__.__name__.lower()
+        
+        objects = data.get(object_types, [])
+
+        for object_type in objects:
+            if object_type["id"] == 's430':
+                object_type['student_name'] = "Emeka"
+
+        with open(filename, 'w') as f:
+                json.dump(data, f, indent=4)
+        print(f"Saved to {filename}")
