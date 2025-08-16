@@ -1,0 +1,46 @@
+{
+    "student": [
+        {
+            "id": "S:46"
+        },
+        {
+            "id": "S:1939"
+        },
+        {
+            "id": "S:2630"
+        },
+        {
+            "id": "S:1329"
+        },
+        {
+            "id": "S:1249"
+        },
+        {
+            "id": "S:1901"
+        },
+        {
+            "id": "S:2788"
+        },
+        {
+            "id": "S:552"
+        },
+        {
+            "id": "S:366"
+        },
+        {
+            "id": "S:1682"
+        },
+        {
+            "id": "S:1325"
+        },
+        {
+            "id": "S:2220",
+            "student_name": "Olamide",
+            "student_gender": "Male",
+            "student_address": "123, any street",
+            "student_role": "Headboy",
+            "student_age": 23
+        }
+    ],
+    "teacher": []
+}
