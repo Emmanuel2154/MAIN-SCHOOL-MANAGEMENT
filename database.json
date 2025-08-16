@@ -1,109 +1,158 @@
 {
     "student": [
         {
-            "id": "s430",
-            "student_name": "Emeka",
-            "student_gender": "Male",
+            "id": "S: 4993",
+            "student_name": "Olamide",
+            "student_gender": "male",
             "student_address": "123, any street",
-            "student_role": "principal"
+            "student_role": "headboy"
         },
         {
-            "id": "s204",
-            "student_name": "Emmanuel",
-            "student_gender": "Male",
+            "id": "S: 239",
+            "student_name": "Olamide",
+            "student_gender": "male",
             "student_address": "123, any street",
-            "student_role": "principal"
+            "student_role": "headboy"
         },
         {
-            "id": "s186",
-            "student_name": "Emmanuel",
-            "student_gender": "Male",
+            "id": "S: 1703",
+            "student_name": "Olamide",
+            "student_gender": "male",
             "student_address": "123, any street",
-            "student_role": "principal"
+            "student_role": "headboy"
         },
         {
-            "id": "s640",
-            "student_name": "Emmanuel",
-            "student_gender": "Male",
+            "id": "S: 5930",
+            "student_name": "Olamide",
+            "student_gender": "male",
             "student_address": "123, any street",
-            "student_role": "principal"
+            "student_role": "headboy"
         },
         {
-            "id": "s796",
-            "student_name": "Emmanuel",
-            "student_gender": "Male",
+            "id": "S: 3135",
+            "student_name": "Olamide",
+            "student_gender": "male",
             "student_address": "123, any street",
-            "student_role": "principal"
+            "student_role": "headboy"
         },
         {
-            "id": "s828",
-            "student_name": "Emmanuel",
-            "student_gender": "Male",
+            "id": "S: 4575",
+            "student_name": "Olamide",
+            "student_gender": "male",
             "student_address": "123, any street",
-            "student_role": "principal"
+            "student_role": "headboy"
         },
         {
-            "id": "s608",
-            "student_name": "Emmanuel",
-            "student_gender": "Male",
+            "id": "S: 1603",
+            "student_name": "Olamide",
+            "student_gender": "male",
             "student_address": "123, any street",
-            "student_role": "principal"
+            "student_role": "headboy"
+        },
+        {
+            "id": "S: 2564",
+            "student_name": "Olamide",
+            "student_gender": "male",
+            "student_address": "123, any street",
+            "student_role": "headboy"
+        },
+        {
+            "id": "S: 3922",
+            "student_name": "Olamide",
+            "student_gender": "male",
+            "student_address": "123, any street",
+            "student_role": "headboy"
+        },
+        {
+            "id": "S: 4976",
+            "student_name": "Olamide",
+            "student_gender": "male",
+            "student_address": "123, any street",
+            "student_role": "headboy"
+        },
+        {
+            "id": "S: 802",
+            "student_name": "Olamide",
+            "student_gender": "male",
+            "student_address": "123, any street",
+            "student_role": "headboy"
+        },
+        {
+            "id": "S: 3643",
+            "student_name": "Olamide",
+            "student_gender": "male",
+            "student_address": "123, any street",
+            "student_role": "headboy"
+        },
+        {
+            "id": "S: 3383",
+            "student_name": "Olamide",
+            "student_gender": "male",
+            "student_address": "123, any street",
+            "student_role": "headboy"
+        },
+        {
+            "id": "S: 2227",
+            "student_name": "Olamide",
+            "student_gender": "male",
+            "student_address": "123, any street",
+            "student_role": "headboy"
         }
     ],
     "teacher": [
         {
-            "id": "t657",
+            "id": "T: 806",
             "teacher_name": "Mr. John",
-            "teacher_gender": "Male",
+            "teacher_gender": "male",
             "teacher_contact_information": "083488883333",
             "teacher_address": "567, any street",
-            "teacher_role": "head_master",
-            "teacher_subject_teacher": "mathematics"
+            "teacher_role": "form teacher",
+            "subject_teacher": "mathematics"
         },
         {
-            "id": "t167",
+            "id": "T: 5558",
             "teacher_name": "Mr. John",
-            "teacher_gender": "Male",
+            "teacher_gender": "male",
             "teacher_contact_information": "083488883333",
             "teacher_address": "567, any street",
-            "teacher_role": "head_master",
-            "teacher_subject_teacher": "mathematics"
+            "teacher_role": "form teacher",
+            "subject_teacher": "mathematics"
         },
         {
-            "id": "t473",
+            "id": "T: 2483",
             "teacher_name": "Mr. John",
-            "teacher_gender": "Male",
+            "teacher_gender": "male",
             "teacher_contact_information": "083488883333",
             "teacher_address": "567, any street",
-            "teacher_role": "head_master",
-            "teacher_subject_teacher": "mathematics"
+            "teacher_role": "form teacher",
+            "subject_teacher": "mathematics"
         },
         {
-            "id": "t834",
+            "id": "T: 2798",
             "teacher_name": "Mr. John",
-            "teacher_gender": "Male",
+            "teacher_gender": "male",
             "teacher_contact_information": "083488883333",
             "teacher_address": "567, any street",
-            "teacher_role": "head_master",
-            "teacher_subject_teacher": "mathematics"
+            "teacher_role": "form teacher",
+            "subject_teacher": "mathematics"
         },
         {
-            "id": "t632",
+            "id": "T: 5780",
             "teacher_name": "Mr. John",
-            "teacher_gender": "Male",
+            "teacher_gender": "male",
             "teacher_contact_information": "083488883333",
             "teacher_address": "567, any street",
-            "teacher_role": "head_master",
-            "teacher_subject_teacher": "mathematics"
+            "teacher_role": "form teacher",
+            "subject_teacher": "mathematics"
         },
         {
-            "id": "t525",
+            "id": "T: 1306",
             "teacher_name": "Mr. John",
-            "teacher_gender": "Male",
+            "teacher_gender": "male",
             "teacher_contact_information": "083488883333",
             "teacher_address": "567, any street",
-            "teacher_role": "head_master",
-            "teacher_subject_teacher": "mathematics"
+            "teacher_role": "form teacher",
+            "subject_teacher": "mathematics"
         }
     ]
 }
