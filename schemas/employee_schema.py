@@ -17,4 +17,4 @@ class CreateEmployeeSchema(BaseModel):
         for field in ['employee_gender', 'employee_role']:
             if field in dict_value and isinstance(dict_value[field], str):
                 dict_value[field] = dict_value[field].lower()
-        return dict_value        
+        return dict_value

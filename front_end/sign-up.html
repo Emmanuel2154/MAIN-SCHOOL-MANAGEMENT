@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background: rgb(36, 144, 36);
+    width: 100%;
+    height: 40vh;
+}
+
+.sign-up-container{
+    background: #fff;
+    box-shadow: 15px 20px 6px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    height: 93vh;
+    position: absolute;
+    top: 4%;
+    left: 25%;
+    width: 50%;
+    padding: 20px 50px;
+}
+h1{
+    text-align: center;
+}
+.name-field{
+    width: 100%;   
+    margin-top: 10px;
+}
+.full-name{
+    width: 100%;
+    display: flex;
+}
+.name-field .full-name input{
+    background: rgb(233, 228, 228);
+    width: 100%;
+    height: 7vh;
+    border: none;
+    padding: 0px 5px;
+    margin-left: 20px;
+}
+#first-name{
+    margin-left: -2px;
+}
+
+.contact-information-field{
+    width: 100%;
+    margin-top: 15px;
+}
+.contact-information-inner-field{
+    display: flex;
+}
+.contact-information-inner-field input{
+    width: 100%;
+    background: rgb(233, 228, 228);
+    height: 7vh;
+    border: none;
+    padding: 0px 5px;
+    margin-left: 20px;
+}
+#student-email{
+    margin-left: -0.8px;
+}
+.student-address{
+    width: 100%;
+    margin-top: 15px;
+}
+.student-address input{
+    background: rgb(233, 228, 228);
+    width: 100%;
+    height: 7vh;
+    padding: 0px 5px;
+    border: none;  
+}
+.login-info{
+    display: flex;
+}
+.username-field{
+    margin-top: 15px;
+    width: 100%;
+}
+.username-field input{
+    background: rgb(233, 228, 228);
+    width: 100%;
+    height: 7vh;
+    padding: 0px 5px;
+    border: none;   
+}
+.password-field{
+    margin-top: 15px;
+    width: 100%;
+    margin-left: 20px;
+}
+.password-field input{
+    background: rgb(233, 228, 228);
+    width: 100%;
+    padding: 0px 5px;
+    height: 7vh;
+    border: none;
+}
+.student-extra-info{
+    width: 100%;
+    margin-top: 15px;
+}
+.contact-information-inner-field{
+    display: flex;
+}
+.student-extra-info-field{
+    display: flex;
+    width: 100%;
+}
+.student-extra-info input{
+    background: rgb(233, 228, 228);
+    width: 100%;
+    height: 7vh;
+    border: none;
+    padding: 0px 5px;
+}
+.student-dob{
+    margin-top: -20px;
+    margin-left: 20px;
+    width: 100%;
+
+}
+.student-role{
+    margin-left: -0.8px;
+    width: 100%;
+}
+
+
+select{
+    font-weight: 500%;
+    padding: 10px 30px;
+    background-color: white;
+    font-size: 20px;    
+}
+.student-gender{
+    width: 100%;
+    margin-top: -20px;
+    margin-left: 20px;
+
+}
+.terms-checkbox{
+    margin-top: 10px;
+}
+.sign-up-button{
+    margin-top: 20px;
+    width: 90%;
+    position: relative;
+    left: 30px;
+    
+}
+.sign-up-button > button{
+    width: 100%;
+    height: 7vh;
+    background-color: rgb(36, 144, 36);
+    border: none;
+}
+.sign-up-button > button > a{
+    text-decoration: none;
+    color: white;
+}
+.signup-text{
+    text-align: center;
+    margin-top: 15px;
+}
+.signup-text a{
+    text-decoration: none;
+}
+
+</style>
+<body>
+    <div class="sign-up-container">
+        <h1>STUDENT REGISTRATION FORM</h1>
+        <div class="name-field">
+            <h3>Student Name</h3>
+            <div class="full-name">
+                <input type="text" name="student_first_name" id="first-name" placeholder="Enter first name">
+                <input type="text" name="student_middle_name" id="middle-name" placeholder="Enter middle name">
+                <input type="text" name="student_last_name" id="last-name" placeholder="Enter last name">
+            </div>
+        </div>
+        <div class="contact-information-field">
+            <h3>Contact Information</h3>
+            <div class="contact-information-inner-field">
+                <input type="text" name="student_email" id="student-email" placeholder="Enter email">
+                <input type="text" name="student_phone_number" placeholder="Enter phone number">
+            </div>          
+        </div>
+        <div class="student-address">
+            <h3>Address</h3>
+            <input type="text" name="student-address" placeholder="Enter address">
+        </div>
+        <div class="login-info">
+            <div class="username-field">
+                <h3>Username</h3>
+                <input type="text" name="student_username" placeholder="Enter username">
+            </div>
+            <div class="password-field">
+                <h3>Password</h3>
+                <input type="password" name="student_password" placeholder="Enter password">
+            </div>
+        </div>
+        
+        <div class="student-extra-info">
+            <h3>Role</h3>
+            <div class="student-extra-info-field">
+                <div class="student-role">
+                    <input type="text" id="student-role" name="student_role" placeholder="Enter role">
+                </div>
+                <div class="student-dob">
+                    <h3>Date-of-birth</h3>
+                    <input type="date" name="student_age" placeholder="Enter age">
+                </div>
+                <div class="student-gender">
+                    <h3>Student gender</h3>
+                    <select name="gender" name="student_gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="terms-checkbox">
+            <input type="checkbox" name="text" id="">Terms and condition
+        </div>
+        <div class="sign-up-button">
+            <button><a href="">Sign-up</a></button>
+        </div>
+        <div class="signup-text">
+            <h3>Already have an account? <br><a href="login.html">login</a> here.</h3>
+        </div>
+    </div>
+</body>
+</html>

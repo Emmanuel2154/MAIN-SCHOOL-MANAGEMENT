@@ -1,44 +1,42 @@
 from  models.student import Student
 from schemas.student_schema import CreateStudentSchema
-from db_sql import student_to_db
-from sql_alchemy import add_student_to_database
-
-def create_new_student(student_dict: dict) -> Student:
-    """Create Student"""
-    data = CreateStudentSchema(**student_dict)
-    data_dict = data.model_dump()
-    
-    student = Student(**data_dict)
-    """call the method that saves it to the file"""
-    student.save_to_json()
-    return student
-
-def add_student_to_db(student_dict: dict) -> Student:
-    """Create Student"""
-    print("Enter student_name")
-    student_name = input(">")
-    print("Enter student_gender")
-    student_gender = input(">")
-    print("Enter student_address")
-    student_address = input(">")
-    print("Enter student_role: [headboy, headgirl, assistant headboy, assitant headboy]")
-    student_role = input(">")
-    print("Enter student_age")
-    student_age = input(">")
-
-    student_dict.update({
-        "student_name": student_name,
-        "student_gender": student_gender,
-        "student_address": student_address,
-        "student_role": student_role,
-        "student_age": student_age
-    })
-    data = CreateStudentSchema(**student_dict)
-    data_dict = data.model_dump()
-    
-    student = Student(**data_dict)
-    """call function to save to database"""
-    add_student_to_database(student.to_dict())
-    return student
+from storage.database import DBstorage
+from sqlalchemy.ext.asyncio import AsyncSession
 
 
+db = DBstorage()
+
+async def create_new_student(session: AsyncSession, student_dict: CreateStudentSchema):
+    data = student_dict.model_dump()
+    # new_data = CreateStudentSchema(**data)
+    student = Student(**data)
+    await db.save(session, student)
+    await session.refresh(student)
+    return {
+        "status": "success",
+        "data": student.to_dict()
+    }
+
+async def fetch_students(session: AsyncSession):
+    all_student = await db.get_by_class(session, Student)
+    return [student.to_dict() for student in all_student]
+
+async def get_student_by_id(session: AsyncSession, student_id):
+    student = await db.get_by_id(session, Student, student_id)
+    if student is None:
+        print("Student is not available in th DB")
+        return {}
+    return student.to_dict()
+
+async def search_student_by_column_name(session: AsyncSession, column_name):
+    column = await db.get_by_column_name(session, Student, column_name)
+    return column
+
+
+async def update_student(session: AsyncSession, admin_id, key, value):
+    new_info = await db.update_info(session, Student, admin_id, key, value)
+    return new_info
+
+async def delete_student(session: AsyncSession, student_id):
+    deleted_info = await db.delete_by_id(session, Student, student_id)
+    return deleted_info
