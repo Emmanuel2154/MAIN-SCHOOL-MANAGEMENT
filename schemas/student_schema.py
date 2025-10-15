@@ -3,13 +3,11 @@ from typing import Literal
 
 class CreateStudentSchema(BaseModel):
     """Student's pydantic attributes"""
+    user_id: str
     student_first_name: str
     student_middle_name: str
     student_last_name: str
-    student_email: str
     student_phone_number: str
-    student_username: str
-    student_password: str
     student_gender: Literal['male', 'female']
     student_address: str
     student_role: Literal['headboy', 'headgirl', 'assistant headboy', 'assitant headboy', 'normal student']

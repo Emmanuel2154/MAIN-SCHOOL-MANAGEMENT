@@ -4,10 +4,10 @@ from schemas.employee_schema import CreateEmployeeSchema
 from myalchemy import add_employee_to_database
 from storage.database import DBstorage
 from sqlalchemy.ext.asyncio import AsyncSession
+from storage import db 
 
-db = DBstorage()
-async def create_new_employee(session: AsyncSession, employee_dict: CreateEmployeeSchema):
-    new_data = employee_dict.model_dump()
+async def create_new_employee(session: AsyncSession, employee_data: CreateEmployeeSchema):
+    new_data = employee_data.model_dump()
     employee = Employee(**new_data)
     # print(student.to_dict())
     await db.save(session, employee)
@@ -37,17 +37,29 @@ async def get_employee_by_id(session: AsyncSession, employee_id):
     if employee is None:
         print("Employee is not in DB")
         return{}
-    return employee.to_dict()
+    return{
+            "status": "success",
+            "data": employee
+    }
 
 async def search_employee_by_column_name(session: AsyncSession, column_name):
     column = await db.get_by_column_name(session, Employee, column_name)
-    return column
+    return {
+        "status": "success",
+        "data": column
+    }
 
 async def update_employee(session: AsyncSession, employee_id, key, value):
     new_info = await db.update_info(session, Employee, employee_id, key, value)
-    return new_info
+    return {
+        "status": "success",
+        "data": new_info
+    }
     
-
 async def delete_employee(session: AsyncSession, employee_id):
     deleted_info = await db.delete_by_id(session, Employee, employee_id)
-    return deleted_info
+    return {
+        "status": "success",
+        "data": deleted_info
+    }
+

@@ -29,7 +29,6 @@ Base.metadata.create_all(engine)
 def add_student_to_database(student_dict: dict):
     with Session(engine) as session:        
         student_obj = Student(**student_dict)
-        print(student_dict)
         session.add(student_obj)
         # print(student_obj)
         session.commit()

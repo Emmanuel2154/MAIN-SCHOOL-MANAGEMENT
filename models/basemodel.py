@@ -1,12 +1,13 @@
 import random
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.ext.asyncio import AsyncAttrs
 import json
 from sqlalchemy.inspection import inspect
 from datetime import datetime
 from uuid import uuid4
 from utils.fiile_handler import read_file, write_to_file, append_file
 
-class Base(DeclarativeBase):
+class Base(AsyncAttrs, DeclarativeBase):
     pass
 class BaseModel:
     __abstract__ = True
@@ -22,20 +23,15 @@ class BaseModel:
     #         setattr(self, key, value)
 
     def to_dict(self):
-        return {
-            c.key: getattr(self, c.key)
-            for c in inspect(self).mapper.column_attrs
-        }
+        data = dict(self.__dict__)
+        data.pop("_sa_instance_state", None)
+        return data
     
     def save_to_json(self, filename="database.json"):
         """Read existing data"""
         data = read_file(filename)
-        # """Accessing the class and storing in a variable"""
         object_type = self.__class__.__name__.lower()
-        # print(object_type)
         data = append_file(data, object_type, self.to_dict())
-        
-        # print(data)
         write_to_file(filename, data)
 
 

@@ -8,7 +8,6 @@ class CreateEmployeeSchema(BaseModel):
     employee_contact_information: str
     employee_address: str | int
     employee_role: Literal['principal', 'form teacher', 'subject teacher']
-    # subject_teacher: Literal['mathematics', 'english', 'basic science', 'hysical health education', 'literature']
 
    
     @model_validator(mode='before')

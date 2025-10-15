@@ -4,7 +4,7 @@ from storage import db
 from services.employee_services import create_new_employee, fetch_employees, get_employee_by_id, update_employee, delete_employee, search_employee_by_column_name
 from schemas.employee_schema import CreateEmployeeSchema
 
-employee_router = APIRouter()
+employee_router = APIRouter(prefix="/api/v1/employees", tags=["Employees"])
 
 @employee_router.post("/employee")
 async def add_employee(
